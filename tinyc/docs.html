@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tinyCcOS docs</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="description" content="tinyCcOS (tinyc): a tiny, plain version of CcOS for old computers.">
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; <a href="index.html">tinyCcOS</a> &gt; Docs</small></p>
+<h1>tinyCcOS docs</h1>
+<p>[ <a href="index.html">About</a> | <b>Docs</b> ]</p>
+<hr>
+<h2>Contents</h2>
+<ol>
+  <li><a href="#start">Starting tinyc</a></li>
+  <li><a href="#desktop">The desktop</a></li>
+  <li><a href="#keys">Keyboard shortcuts</a></li>
+  <li><a href="#apps">Apps</a></li>
+  <li><a href="#wifi">Wi-Fi</a></li>
+  <li><a href="#files">Files and Notepad</a></li>
+  <li><a href="#saving">What gets saved</a></li>
+  <li><a href="#terminal">The Terminal</a></li>
+  <li><a href="#help">When things go wrong</a></li>
+</ol>
+
+<h2><a name="start" id="start">1. Starting tinyc</a></h2>
+<ol>
+  <li>Write the tinyc USB image to a USB stick of <b>2 GB or more</b> with <a href="https://rufus.ie">Rufus</a>
+      (on Windows) or <tt>dd</tt>. <b>Everything on the stick is erased.</b></li>
+  <li>Restart the computer and open its boot menu (often <b>F12</b>, sometimes F9, F10, F11 or Esc at the logo) and pick the stick.</li>
+  <li>A small menu shows for 3 seconds and <b>tinyc</b> starts by itself.
+      If the screen stays black, restart and pick <b>tinyc (safe graphics)</b>.</li>
+</ol>
+<p>While it starts, tinyc shows a line for each step:</p>
+<p><img src="../img/tinyc-boot.png" alt="tinyc boot messages" width="720" height="260"></p>
+<p>The <b>first start</b> takes a bit longer: tinyc turns the empty rest of the stick into a place for your files
+(<tt>[ OK ] Made room for your files on the stick.</tt>).</p>
+
+<h3>"Please unplug and plug in your installation USB."</h3>
+<p><img src="../img/tinyc-wait.png" alt="the WAIT line" width="720" height="120"></p>
+<p>Some computers find USB sticks late. If tinyc can't find its stick, it waits on this line.
+Unplug the stick and plug it back in: the line turns into <tt>[ OK ]</tt> and tinyc carries on to the desktop.
+tinyc always needs its stick, so it waits until it finds it.</p>
+
+<h2><a name="desktop" id="desktop">2. The desktop</a></h2>
+<ul>
+  <li><b>/o\</b> (bottom left) opens the menu: Terminal, Files, Notepad, Apps, Wi-Fi, <b>Programs</b>
+      (everything you installed with Apps), Restart and Shut down.</li>
+  <li>Next to it are quick buttons for Terminal, Files, Notepad and Apps.</li>
+  <li>The middle of the taskbar shows your open windows. Click one to bring it up or hide it.</li>
+  <li>Bottom right: the battery (on laptops) and the clock.</li>
+  <li>Windows have the usual buttons: minimize, maximize and close. Double-click a title bar to maximize.</li>
+  <li>Always use <b>Shut down</b> or <b>Restart</b> in the menu, so everything is written to the stick first.</li>
+</ul>
+
+<h2><a name="keys" id="keys">3. Keyboard shortcuts</a></h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Keys</th><th align="left">What it does</th></tr>
+<tr><td valign="top"><tt>Ctrl + Esc</tt></td><td valign="top">Open the /o\ menu</td></tr>
+<tr><td valign="top"><tt>Alt + Tab</tt></td><td valign="top">Switch windows</td></tr>
+<tr><td valign="top"><tt>Alt + F4</tt></td><td valign="top">Close the window</td></tr>
+<tr><td valign="top"><tt>Win + E</tt></td><td valign="top">Files</td></tr>
+<tr><td valign="top"><tt>Win + T</tt></td><td valign="top">Terminal</td></tr>
+<tr><td valign="top">Volume keys</td><td valign="top">Volume up / down / mute</td></tr>
+<tr><td valign="top"><tt>Ctrl + N / O / S</tt></td><td valign="top">Notepad: new / open / save</td></tr>
+<tr><td valign="top"><tt>Ctrl + F</tt>, <tt>F3</tt></td><td valign="top">Notepad: find, find next</td></tr>
+</table>
+
+<h2><a name="apps" id="apps">4. Apps</a></h2>
+<p><img src="../img/tinyc-apps.png" alt="The Apps window" width="760" height="540"></p>
+<ul>
+  <li><b>Popular</b> shows well-known apps by category. Type in <b>Search</b> to look through thousands more,
+      or pick <b>All apps</b>. <b>Installed</b> shows what you added.</li>
+  <li>Click an app to see what it is and how big the download is (with everything it needs).
+      Click <b>Install</b> (or double-click it). When it's done, find it in <b>/o\ &gt; Programs</b>.</li>
+  <li><b>Remove</b> takes an app away again. Parts of tinyc itself can't be removed.</li>
+  <li>Apps needs the internet: connect with Wi-Fi or a cable first. The round arrow button gets the newest list.</li>
+  <li>Big apps that need 3D graphics (Firefox, many games) download extra parts the first time (about 225 MB),
+      because tinyc leaves them out to stay small.</li>
+</ul>
+<p>In the Terminal, the same thing is <tt>apk</tt>: <tt>apk search NAME</tt>, <tt>apk add NAME</tt>, <tt>apk del NAME</tt>.</p>
+
+<h2><a name="wifi" id="wifi">5. Wi-Fi</a></h2>
+<p><img src="../img/tinyc-wifi.png" alt="The Wi-Fi window" width="462" height="410"></p>
+<ol>
+  <li>Open <b>/o\ &gt; Wi-Fi</b>. It looks for networks by itself (<b>Refresh</b> looks again).</li>
+  <li>Pick your network and click <b>Connect</b> (or double-click it), then type the password.</li>
+  <li>tinyc remembers it ("saved") and connects by itself next time. <b>Forget</b> removes a saved network.</li>
+</ol>
+<p>A network cable works straight away, with nothing to set up.</p>
+<p>If it says <b>"No Wi-Fi card found"</b>, your Wi-Fi chip needs a part tinyc doesn't include. Connect with a cable, open Apps,
+search for <b>linux-firmware</b> and install the one for your chip (for example <tt>linux-firmware-brcm</tt> for Broadcom,
+<tt>linux-firmware-mediatek</tt> for MediaTek), then restart.</p>
+<p>In the Terminal, Wi-Fi is <tt>iwctl</tt>: <tt>iwctl station wlan0 get-networks</tt>, <tt>iwctl station wlan0 connect NAME</tt>.</p>
+
+<h2><a name="files" id="files">6. Files and Notepad</a></h2>
+<ul>
+  <li><b>Files</b> opens your home folder. Your <b>Documents</b> folder is there. Double-click to open things;
+      right-click for copy, paste, rename and delete. Deleted files go to the <b>Trash can</b> on the left.</li>
+  <li><b>USB sticks and drives</b> open by themselves when you plug them in: they show up under <b>Mount Points</b>
+      on the left as <tt>/media/NAME</tt>. Before pulling one out, close anything using it and wait a moment.</li>
+  <li><b>Notepad</b> writes plain text. It saves in Documents and asks before closing if something isn't saved.
+      View &gt; Word wrap, Bigger text and Smaller text change how it looks.</li>
+</ul>
+
+<h2><a name="saving" id="saving">7. What gets saved</a></h2>
+<p>Everything you change is kept on the stick: your files, settings, saved Wi-Fi networks and installed apps.
+tinyc itself stays untouched underneath, on the stick's first part.</p>
+<ul>
+  <li>Always shut down from the menu, so nothing is lost.</li>
+  <li>To start completely fresh, write the stick again. <b>This erases all your files and apps</b>, so copy
+      what you want to keep to another drive first.</li>
+  <li>Windows may offer to format the stick when you plug it in. Say <b>no</b>.</li>
+</ul>
+
+<h2><a name="terminal" id="terminal">8. The Terminal</a></h2>
+<p>tinyc's Terminal is plain Linux: there are no special easy commands like in CcOS. These are the ones you'll use most:</p>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Command</th><th align="left">What it does</th></tr>
+<tr><td valign="top"><tt>ls</tt></td><td valign="top">List the files here (<tt>ls -l</tt> with sizes)</td></tr>
+<tr><td valign="top"><tt>cd FOLDER</tt></td><td valign="top">Go into a folder (<tt>cd ..</tt> goes up, <tt>cd</tt> goes home)</td></tr>
+<tr><td valign="top"><tt>pwd</tt></td><td valign="top">Show where you are</td></tr>
+<tr><td valign="top"><tt>cat FILE</tt></td><td valign="top">Show what's in a file</td></tr>
+<tr><td valign="top"><tt>nano FILE</tt></td><td valign="top">Edit a file (Ctrl+O saves, Ctrl+X quits)</td></tr>
+<tr><td valign="top"><tt>cp A B</tt>, <tt>mv A B</tt></td><td valign="top">Copy, move or rename</td></tr>
+<tr><td valign="top"><tt>rm FILE</tt></td><td valign="top">Delete for good (no Trash can!)</td></tr>
+<tr><td valign="top"><tt>mkdir NAME</tt></td><td valign="top">Make a folder</td></tr>
+<tr><td valign="top"><tt>echo hi &gt; a.txt</tt></td><td valign="top">Make a file with text in it</td></tr>
+<tr><td valign="top"><tt>df -h</tt>, <tt>free -m</tt></td><td valign="top">Free space, free memory</td></tr>
+<tr><td valign="top"><tt>ip a</tt>, <tt>ping -c 3 alpinelinux.org</tt></td><td valign="top">Network addresses, is the internet working?</td></tr>
+<tr><td valign="top"><tt>apk add NAME</tt></td><td valign="top">Install an app (like Apps)</td></tr>
+<tr><td valign="top"><tt>amixer set Master 80%</tt></td><td valign="top">Set the volume</td></tr>
+<tr><td valign="top"><tt>startx</tt></td><td valign="top">Start the desktop again (if it stopped)</td></tr>
+<tr><td valign="top"><tt>tinyc-power off</tt>, <tt>tinyc-power reboot</tt></td><td valign="top">Shut down, restart</td></tr>
+</table>
+<p>Any command followed by <tt>--help</tt> shows how to use it, for example <tt>cp --help</tt>.</p>
+
+<h2><a name="help" id="help">9. When things go wrong</a></h2>
+<dl>
+  <dt><b>The screen stays black when it starts</b></dt>
+  <dd>Restart and pick <b>tinyc (safe graphics)</b> in the menu that shows for 3 seconds.</dd>
+  <dt><b>It waits on "Please unplug and plug in your installation USB." forever</b></dt>
+  <dd>Try another USB port (on the back of a desktop PC, or a USB 2 port). Make sure it's the tinyc stick.</dd>
+  <dt><b>"Couldn't make room for your files on the stick"</b></dt>
+  <dd>The stick is too small. tinyc needs at least 1 GB of free space after itself, so use a 2 GB stick or bigger.</dd>
+  <dt><b>"[ FAIL ] The desktop stopped."</b></dt>
+  <dd>Type <tt>startx</tt> to start it again, or <tt>tinyc-power reboot</tt> to restart.</dd>
+  <dt><b>An app won't install</b></dt>
+  <dd>Check the internet first (Wi-Fi window, or <tt>ping -c 3 alpinelinux.org</tt> in the Terminal), then click the round arrow in Apps and try again.</dd>
+  <dt><b>No Wi-Fi card found</b></dt>
+  <dd>See <a href="#wifi">Wi-Fi</a>: your chip needs an extra part from Apps.</dd>
+</dl>
+<hr>
+<center><p><small>tinyCcOS &middot; written for tinyc 0.1</small></p></center>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tinyCcOS</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="description" content="tinyCcOS (tinyc): a tiny, plain version of CcOS for old computers.">
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; tinyCcOS</small></p>
+<h1>tinyCcOS</h1>
+<p>[ <b>About</b> | <a href="docs.html">Docs</a> ]</p>
+<hr>
+<table border="1" cellpadding="6" cellspacing="0" width="100%" bgcolor="#ffffcc"><tr><td>
+<b>tinyCcOS is in making!</b> It will even be able to run on a potato.
+Version 0.1 works, but it hasn't been tested on many real computers yet.
+</td></tr></table>
+
+<p>
+tinyCcOS (or <b>tinyc</b> for short) is a tiny version of CcOS, inspired by
+<a href="http://tinycorelinux.net">Tiny Core Linux</a>. It does the normal things a computer
+should do, it just isn't fancy about it.
+</p>
+
+<p><img src="../img/tinyc-desktop.png" alt="The tinyc desktop with the start menu open" width="640" height="400"></p>
+
+<h2>What's in it</h2>
+<ul>
+  <li>A plain desktop (IceWM) with a taskbar, the <b>/o\</b> start menu and the CcOS look</li>
+  <li><b>Apps</b> - find and install thousands of apps, plain and simple</li>
+  <li><b>Wi-Fi</b>, <b>Files</b> (a file manager), <b>Notepad</b> and a <b>Terminal</b></li>
+  <li>Sound, USB sticks and drives (FAT32, exFAT, NTFS, ext4), webcams</li>
+  <li>Old-school boot messages: <tt>[ OK ]</tt> in green, then "Welcome to tinyc!"</li>
+  <li>Your files, settings and apps are kept on the USB stick</li>
+</ul>
+
+<h2>What it needs</h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left"></th><th align="left">tinyc</th></tr>
+<tr><td valign="top">Computer</td><td valign="top">64-bit (most computers from about 2008 on), old BIOS or newer UEFI</td></tr>
+<tr><td valign="top">Memory</td><td valign="top">256 MB is enough. With the desktop and a Terminal open, about 165 MB is still free.</td></tr>
+<tr><td valign="top">USB stick</td><td valign="top">at least 2 GB (tinyc itself uses about 130 MB; the rest is for your files and apps)</td></tr>
+<tr><td valign="top">Wi-Fi</td><td valign="top">Intel, Realtek and Atheros USB chips work out of the box. Others (Broadcom, MediaTek) can be added with Apps over a cable.</td></tr>
+</table>
+
+<h2>CcOS or tinyc?</h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left"></th><th align="left">CcOS</th><th align="left">tinyCcOS</th></tr>
+<tr><td valign="top">Look</td><td valign="top">Glass effects, animations, themes</td><td valign="top">Plain and simple</td></tr>
+<tr><td valign="top">Apps</td><td valign="top">Lots of apps built in</td><td valign="top">Just the basics, add what you need</td></tr>
+<tr><td valign="top">Computers</td><td valign="top">From the last few years</td><td valign="top">Old computers (and potatoes)</td></tr>
+<tr><td valign="top">Who it's for</td><td valign="top">Good for beginners</td><td valign="top">Needs a tiny bit more experience</td></tr>
+<tr><td valign="top">Download</td><td valign="top">about 200 MB</td><td valign="top">about 70 MB</td></tr>
+</table>
+
+<p>
+<b>Heads up:</b> to use tinyCcOS you might need a tiny bit more experience: understanding how things
+work, and knowing how to use some Linux commands in the terminal. It's not hard, it just doesn't
+hold your hand as much as CcOS does.
+</p>
+<p><b>Help will always be available in the <a href="docs.html">docs</a>!</b></p>
+
+<h2>Screenshots</h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr><td align="center"><img src="../img/tinyc-apps.png" alt="The Apps window" width="760" height="540"><br>Apps</td></tr>
+<tr><td align="center"><img src="../img/tinyc-boot.png" alt="tinyc starting up" width="720" height="260"><br>Starting up</td></tr>
+<tr><td align="center"><img src="../img/tinyc-wifi.png" alt="The Wi-Fi window" width="462" height="410"><br>Wi-Fi</td></tr>
+</table>
+
+<h2>Under the hood</h2>
+<p>tinyc is built on <a href="https://alpinelinux.org">Alpine Linux</a> (its packages are what Apps installs)
+and the Linux kernel, with the IceWM desktop. tinyc's own little programs (Apps, Wi-Fi, Notepad) are made with FLTK.</p>
+<hr>
+<center><p><small>tinyCcOS &middot; written for tinyc 0.1</small></p></center>
+
+</body>
+</html>
