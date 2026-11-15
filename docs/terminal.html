@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Terminal - CcOS docs</title>
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; <a href="index.html">Docs</a> &gt; The Terminal</small></p>
+<h1>The Terminal</h1>
+<p>[ <a href="index.html">Contents</a> | <a href="start.html">Getting started</a> | <a href="desktop.html">The desktop</a> | <a href="shortcuts.html">Shortcuts</a> | <a href="files.html">Files</a> | <a href="apps.html">Apps</a> | <b>Terminal</b> | <a href="help.html">Help</a> ]</p>
+<hr>
+<p><img src="../img/terminal.png" alt="The Terminal" width="640" height="400"></p>
+<p>The Terminal is where you type commands. Open it from the start menu or the Finder. Type <tt>help</tt>
+to see a list of useful commands.</p>
+
+<h2>Easy commands</h2>
+<p>CcOS has its own easy commands for beginners. Under each one, a grey line shows how you'd do the same
+thing the usual Linux way, so you learn the real commands too. Type <tt>hints off</tt> to hide those lines
+and <tt>hints on</tt> to bring them back.</p>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Command</th><th align="left">What it does</th></tr>
+<tr><td valign="top" nowrap><tt>mkf hi.txt</tt></td><td valign="top">Make an empty file called hi.txt</td></tr>
+<tr><td valign="top" nowrap><tt>mkf hi.txt : hello!</tt></td><td valign="top">Make hi.txt with "hello!" inside</td></tr>
+<tr><td valign="top" nowrap><tt>rd hi.txt</tt></td><td valign="top">Show what's inside a file</td></tr>
+<tr><td valign="top" nowrap><tt>adf hi.txt : more</tt></td><td valign="top">Add text to the end of a file</td></tr>
+<tr><td valign="top" nowrap><tt>rn old.txt : new.txt</tt></td><td valign="top">Rename a file</td></tr>
+<tr><td valign="top" nowrap><tt>cpf hi.txt : usb1</tt></td><td valign="top">Copy a file (to usb1, D:, a folder, or a new name)</td></tr>
+<tr><td valign="top" nowrap><tt>rmt hi.txt</tt></td><td valign="top">Move it to the Recycle Bin</td></tr>
+<tr><td valign="top" nowrap><tt>op hi.txt</tt></td><td valign="top">Open it in its app (op google.com opens a website)</td></tr>
+<tr><td valign="top" nowrap><tt>lsusb</tt></td><td valign="top">List your USB sticks: usb1, usb2...</td></tr>
+<tr><td valign="top" nowrap><tt>cdusb usb1</tt></td><td valign="top">Go into a USB stick. Files you make now go on it</td></tr>
+<tr><td valign="top" nowrap><tt>xusb</tt></td><td valign="top">Leave the USB stick</td></tr>
+<tr><td valign="top" nowrap><tt>jusb usb1</tt></td><td valign="top">Eject a USB stick safely</td></tr>
+<tr><td valign="top" nowrap><tt>space</tt></td><td valign="top">Free space on D:, apps and USB sticks</td></tr>
+<tr><td valign="top" nowrap><tt>net</tt></td><td valign="top">Is the internet working?</td></tr>
+<tr><td valign="top" nowrap><tt>whereami</tt></td><td valign="top">Where am I?</td></tr>
+<tr><td valign="top" nowrap><tt>hints off / hints on</tt></td><td valign="top">Hide or show the grey "usual Linux way" lines</td></tr>
+</table>
+
+<h3>Things to know</h3>
+<ul>
+  <li><b><tt>\n</tt> starts a new line</b> in <tt>mkf</tt> and <tt>adf</tt>:
+      <tt>mkf list.txt : milk \n eggs</tt> makes a file with "milk" and "eggs" on two lines.</li>
+  <li><b>Names with spaces work</b> without quotes: <tt>rd my list.txt</tt>.</li>
+  <li><b>Nothing gets overwritten.</b> If a name is taken, the command says so.</li>
+  <li><b>The Terminal starts in its home folder</b>, which isn't kept after a restart. So in the home folder,
+      <tt>mkf</tt> puts new files in <b>Documents</b> (D:\Documents), and <tt>rd</tt>, <tt>rn</tt> and the others find them there.</li>
+  <li><b>USB sticks are numbered</b> in the order they were plugged in. If you pull out usb1, the next one becomes usb1.</li>
+  <li>While you're in a stick (after <tt>cdusb</tt>), the prompt shows <font color="#aa00aa"><b>usb1</b></font>.</li>
+</ul>
+
+<h3>Example</h3>
+<pre>
+ccos ~ # mkf shop.txt : milk
+&#10004; Made the file shop.txt in D:/Documents (with your text inside)
+  <font color="#888888">(the usual Linux way: echo milk &gt; /data/Documents/shop.txt)</font>
+ccos ~ # adf shop.txt : eggs \n bread
+&#10004; Added 2 lines to shop.txt
+ccos ~ # rd shop.txt
+milk
+eggs
+bread
+ccos ~ # cpf shop.txt : usb1
+&#10004; Copied shop.txt to usb1 (KINGSTON)
+ccos ~ # jusb usb1
+&#10004; usb1 (KINGSTON) is safe to pull out now.
+</pre>
+
+<h2>Real Linux commands</h2>
+<p>All the usual Linux commands work too:</p>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Command</th><th align="left">What it does</th></tr>
+<tr><td valign="top" nowrap><tt>ls / ll</tt></td><td valign="top">List files (ll: with sizes and dates)</td></tr>
+<tr><td valign="top" nowrap><tt>cd FOLDER</tt></td><td valign="top">Go into a folder (cd .. goes up, D: goes to your D: drive)</td></tr>
+<tr><td valign="top" nowrap><tt>cp A B / mv A B</tt></td><td valign="top">Copy / move or rename</td></tr>
+<tr><td valign="top" nowrap><tt>rm FILE</tt></td><td valign="top">Delete for good (no Recycle Bin!)</td></tr>
+<tr><td valign="top" nowrap><tt>mkdir NAME</tt></td><td valign="top">Make a folder</td></tr>
+<tr><td valign="top" nowrap><tt>tree</tt></td><td valign="top">Folders as a tree</td></tr>
+<tr><td valign="top" nowrap><tt>nano FILE</tt></td><td valign="top">Edit a text file (Ctrl+S saves, Ctrl+X quits)</td></tr>
+<tr><td valign="top" nowrap><tt>cat / less FILE</tt></td><td valign="top">Show / read a file (q quits)</td></tr>
+<tr><td valign="top" nowrap><tt>find . -name '*.txt'</tt></td><td valign="top">Find files</td></tr>
+<tr><td valign="top" nowrap><tt>zip -r a.zip DIR / unzip a.zip</tt></td><td valign="top">Zip a folder / unzip</td></tr>
+<tr><td valign="top" nowrap><tt>7z x FILE</tt></td><td valign="top">Unpack .7z, .rar and more</td></tr>
+<tr><td valign="top" nowrap><tt>htop</tt></td><td valign="top">Running programs, CPU and memory (F9 ends one, q quits)</td></tr>
+<tr><td valign="top" nowrap><tt>sensors</tt></td><td valign="top">Temperatures and fans</td></tr>
+<tr><td valign="top" nowrap><tt>df -h / free -h</tt></td><td valign="top">Free space / memory</td></tr>
+<tr><td valign="top" nowrap><tt>lsblk</tt></td><td valign="top">Disks and USB sticks</td></tr>
+<tr><td valign="top" nowrap><tt>lsusb -a / lspci</tt></td><td valign="top">All USB devices / other devices</td></tr>
+<tr><td valign="top" nowrap><tt>ping google.com</tt></td><td valign="top">Is the internet working?</td></tr>
+<tr><td valign="top" nowrap><tt>ip a</tt></td><td valign="top">Network addresses</td></tr>
+<tr><td valign="top" nowrap><tt>curl URL</tt></td><td valign="top">Download (curl wttr.in shows the weather)</td></tr>
+<tr><td valign="top" nowrap><tt>ssh user@host</tt></td><td valign="top">Log in to another computer (scp copies files)</td></tr>
+<tr><td valign="top" nowrap><tt>python3</tt></td><td valign="top">Python (exit() leaves). python3 FILE.py runs a program</td></tr>
+<tr><td valign="top" nowrap><tt>pip install NAME</tt></td><td valign="top">Add a Python package (kept on the stick)</td></tr>
+<tr><td valign="top" nowrap><tt>flatpak install flathub ID</tt></td><td valign="top">Install an app from Flathub (like the Software Manager)</td></tr>
+<tr><td valign="top" nowrap><tt>poweroff / reboot</tt></td><td valign="top">Shut down / restart</td></tr>
+<tr><td valign="top" nowrap><tt>help COMMAND</tt></td><td valign="top">More about one command</td></tr>
+</table>
+<hr>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td align="left">&lt;&lt; <a href="apps.html">Apps</a></td><td align="right"><a href="help.html">When things go wrong</a> &gt;&gt;</td>
+</tr></table>
+<center><p><small>CcOS docs &middot; written for CcOS 1.9.6</small></p></center>
+
+</body>
+</html>

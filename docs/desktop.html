@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The desktop - CcOS docs</title>
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; <a href="index.html">Docs</a> &gt; The desktop</small></p>
+<h1>The desktop</h1>
+<p>[ <a href="index.html">Contents</a> | <a href="start.html">Getting started</a> | <b>The desktop</b> | <a href="shortcuts.html">Shortcuts</a> | <a href="files.html">Files</a> | <a href="apps.html">Apps</a> | <a href="terminal.html">Terminal</a> | <a href="help.html">Help</a> ]</p>
+<hr>
+<p><img src="../img/desktop.png" alt="The CcOS desktop" width="640" height="400"></p>
+
+<h2>Taskbar or Dock</h2>
+<p>CcOS has two ways to show the bottom of the screen. Pick one in
+<b>Settings &gt; Appearance</b> (or the Themes app):</p>
+<ul>
+  <li><b>Bar</b> - the usual taskbar with a start menu, pinned apps and open windows.</li>
+  <li><b>Dock</b> - a floating shelf in the middle. First comes <b>/o\</b> (the Finder), then pinned apps
+      and open windows (a dot under the open ones), then the Recycle Bin. Point at it and the icons grow.
+      The clock, network, battery and a power button sit in the bottom right corner.</li>
+</ul>
+<p>Right-click an app to pin it or unpin it. Point at an app for a moment to see a small live preview of its windows.</p>
+
+<h2>Start menu and Finder</h2>
+<p>Press the <b>Windows key</b> or click <b>/o\</b>.</p>
+<ul>
+  <li>In the <b>start menu</b>, just start typing to search apps, Settings pages ("wifi", "time", "dark")
+      and files. Enter opens the top result.</li>
+  <li>The <b>Finder</b> (with the Dock) shows everything in tabs: Apps, Files, Images, Videos, Music and
+      Downloads. Type to search; Tab switches tabs.</li>
+</ul>
+<p><img src="../img/apps.png" alt="The Finder" width="640" height="400"></p>
+
+<h2>Windows</h2>
+<ul>
+  <li>Drag a window by its title bar. Double-click the title to maximize it.</li>
+  <li><b>_</b> minimizes, <b>[ ]</b> maximizes or restores, <b>X</b> closes.</li>
+  <li>Drag an edge or a corner to resize.</li>
+  <li><b>Snapping:</b> drag a window to the left or right edge for half the screen, into a corner for a
+      quarter, or to the top to maximize. A see-through box shows where it lands.</li>
+  <li><b>F11</b> makes a window full screen.</li>
+</ul>
+
+<h2>Virtual desktops</h2>
+<p>You can have several desktops with different windows on each. <b>Windows + Tab</b> opens Task View:
+all windows on this desktop, and your desktops along the top. Drag a window onto a desktop to move it there,
+or click <b>+ New desktop</b>. See <a href="shortcuts.html">Keyboard shortcuts</a> for the keys.</p>
+
+<h2>Desktop icons</h2>
+<p>Click to select, double-click to open, drag to move. Right-click &gt; Delete removes the shortcut
+(the app stays). Right-click an app in the start menu &gt; Add to Desktop puts one back.</p>
+
+<h2>Notifications and Focus</h2>
+<ul>
+  <li>Notifications pop up as cards above the clock with a soft chime: USB drives, battery, and messages from apps.
+      Click one to go to that app.</li>
+  <li>The <b>bell</b> keeps every notification. The number on it shows how many you missed.</li>
+  <li><b>Focus</b> (do not disturb) is at the top of the bell's panel: Off, 30 min, 1 hour or Until off.
+      The bell turns into a moon. Alarms still ring.</li>
+</ul>
+
+<h2>The bottom right corner</h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr><td valign="top"><b>Network icon</b></td><td>Connection status, Wi-Fi on/off, nearby Wi-Fi networks (click one and type the password), and Forget for saved ones.</td></tr>
+<tr><td valign="top"><b>Battery</b></td><td>How full it is, with a lightning bolt while charging. Warnings at 20% and 10%. At 4%, CcOS shuts down by itself after a minute unless you plug in.</td></tr>
+<tr><td valign="top"><b>Clock</b></td><td>Click it for the date, a month calendar and your time zone.</td></tr>
+<tr><td valign="top"><b>Bell</b></td><td>The notification centre and Focus.</td></tr>
+</table>
+
+<h2>Settings</h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Tab</th><th align="left">What's in it</th></tr>
+<tr><td valign="top">Appearance</td><td>Desktop background, Light or Dark, the Glass slider, Bar or Dock, window animations</td></tr>
+<tr><td valign="top">Clock</td><td>24-hour clock, time zone (automatic or pick one), internet time, "Windows is on this computer too"</td></tr>
+<tr><td valign="top">Sound</td><td>Volume, startup sound, notification chime</td></tr>
+<tr><td valign="top">Keyboard &amp; mouse</td><td>Keyboard layout (Polish or English), pointer colour and size, touchpad speed</td></tr>
+<tr><td valign="top">Power</td><td>Battery, brightness, screen off after, sleep after, what closing the lid does</td></tr>
+<tr><td valign="top">Bluetooth</td><td>Search for devices, Pair, Connect, Disconnect, Remove</td></tr>
+<tr><td valign="top">Update</td><td>New CcOS versions</td></tr>
+<tr><td valign="top">About</td><td>System info, and "Let apps draw with the graphics chip" (experimental)</td></tr>
+</table>
+<p>The <b>Themes</b> app has whole looks in one click (ccos Light/Dark, Mint, Nord, Dracula, Sunset, Rose...)
+and lets you fine-tune windows, the taskbar, icons and the mouse pointer.</p>
+
+<h2>Desktop background</h2>
+<p>Settings &gt; Appearance has 7 pictures made for CcOS. To use your own, right-click a picture in File Explorer
+&gt; <b>Set as desktop background</b>. Right-click an empty spot on the desktop &gt; Customize to choose Fill, Fit,
+Stretch, Tile, Center or Span.</p>
+
+<h2>Screen and power</h2>
+<ul>
+  <li>The screen dims and turns off after 5 minutes without the mouse or keyboard (not while a video plays).
+      Move the mouse to wake it.</li>
+  <li>Closing the laptop lid puts it to sleep. Open it or press a key to wake it.</li>
+  <li><b>Windows + P</b> sets up a second screen: PC screen only, Duplicate, Extend or Second screen only.</li>
+</ul>
+
+<h2>Touchpad</h2>
+<p>One finger moves the pointer, tap = click, two-finger tap = right-click, two fingers up/down = scroll.</p>
+<hr>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td align="left">&lt;&lt; <a href="start.html">Getting started</a></td><td align="right"><a href="shortcuts.html">Keyboard shortcuts</a> &gt;&gt;</td>
+</tr></table>
+<center><p><small>CcOS docs &middot; written for CcOS 1.9.6</small></p></center>
+
+</body>
+</html>

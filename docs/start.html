@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started - CcOS docs</title>
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; <a href="index.html">Docs</a> &gt; Getting started</small></p>
+<h1>Getting started</h1>
+<p>[ <a href="index.html">Contents</a> | <b>Getting started</b> | <a href="desktop.html">The desktop</a> | <a href="shortcuts.html">Shortcuts</a> | <a href="files.html">Files</a> | <a href="apps.html">Apps</a> | <a href="terminal.html">Terminal</a> | <a href="help.html">Help</a> ]</p>
+<hr>
+<h2>Starting CcOS from a USB stick</h2>
+<p>CcOS runs straight from a USB stick. Nothing is installed on the computer:
+the computer's own drive (where Windows lives) is never touched. CcOS doesn't even
+have a driver for it, so it can't see it.</p>
+<ol>
+  <li>Write the CcOS USB image (<tt>ccos-usb.img.gz</tt>) to a USB stick with
+      <a href="https://rufus.ie">Rufus</a> on Windows. Pick the stick as the Device and the image
+      as the Boot selection, then Start. A stick of 8 GB or more is best, because apps take room.
+      <b>Everything on the stick is erased.</b></li>
+  <li>If Windows then says the stick needs formatting, click <b>Cancel</b>. Never format it,
+      or your CcOS files and apps are gone.</li>
+  <li>Restart the computer and open its boot menu. On many laptops that's <b>F12</b> at the logo
+      (on some Lenovos <b>Fn+F12</b> or the small Novo button; other brands use F9, F10, F11 or Esc).
+      Pick the USB stick.</li>
+  <li>A menu shows for 3 seconds and <b>ccos</b> starts by itself. If the screen stays black,
+      restart and pick <b>ccos (safe graphics)</b>.</li>
+</ol>
+<p>Pull the stick out and restart, and Windows starts like always.</p>
+
+<h2>The first start</h2>
+<p>The first start takes a few seconds longer: CcOS turns the empty rest of the stick into its own
+part, called <b>ccos-store</b>. Your settings, Wi-Fi networks, files, downloads and installed apps
+are all kept there.</p>
+
+<h2>What you see while it starts</h2>
+<p>CcOS shows a line for every step, like this:</p>
+<p><img src="../img/boot.png" alt="CcOS boot messages" width="720" height="250"></p>
+<ul>
+  <li><tt>[&nbsp;&nbsp;<font color="#008800"><b>OK</b></font>&nbsp;&nbsp;]</tt> means the step worked.</li>
+  <li><tt>[&nbsp;<font color="#aa8800"><b>WAIT</b></font>&nbsp;]</tt> means CcOS is still looking for something (usually the USB stick).</li>
+  <li><tt>[&nbsp;<font color="#cc0000"><b>FAIL</b></font>&nbsp;]</tt> means a step went wrong. See <a href="help.html">When things go wrong</a>.</li>
+</ul>
+<p>Then a cyan <b>Welcome to CcOS!</b> appears and the desktop fades in.</p>
+
+<h2>The drives: C: and D:</h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Drive</th><th align="left">What it is</th></tr>
+<tr><td valign="top"><b>C:</b> ccos System</td><td>CcOS itself. It's kept in memory and you can't change it.</td></tr>
+<tr><td valign="top"><b>D:</b> ccos Data</td><td>Your files and settings: Documents, Images, Videos and so on. This is on the stick, so it's kept after a restart.</td></tr>
+<tr><td valign="top"><b>Downloads</b></td><td>Where Firefox and other apps save downloads. Also kept on the stick.</td></tr>
+</table>
+
+<h2>Turning it off</h2>
+<p>Use <b>Shut down</b>, <b>Restart</b> or <b>Sleep</b> at the bottom of the start menu (or the power
+button in the bottom right corner with the Dock). Pressing the computer's power button also shuts down
+properly. Don't pull the stick out while CcOS is running.</p>
+
+<h2>Updates</h2>
+<p>CcOS checks for a new version once a day and shows a notification when there is one.
+Go to <b>Settings &gt; Update</b> and click <b>Install now</b>, then restart. Your files, settings and
+apps stay where they are.</p>
+<p>If a new version doesn't start properly, the stick goes back to the version before all by itself
+on the next start. The menu you see when the stick starts also has <b>ccos (previous version)</b>.</p>
+<p>Only updates signed with the CcOS release key are installed.</p>
+
+<h2>Polish letters</h2>
+<p>The keyboard starts as Polish (programmer's): <tt>Alt Gr</tt> + a, c, e, l, n, o, s, x, z types
+&#261; &#263; &#281; &#322; &#324; &oacute; &#347; &#378; &#380; (hold Shift for capitals).
+<b>Settings &gt; Keyboard &amp; mouse</b> switches to English (US).</p>
+<hr>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td align="left">&lt;&lt; <a href="index.html">Docs</a></td><td align="right"><a href="desktop.html">The desktop</a> &gt;&gt;</td>
+</tr></table>
+<center><p><small>CcOS docs &middot; written for CcOS 1.9.6</small></p></center>
+
+</body>
+</html>

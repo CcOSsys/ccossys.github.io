@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Files and USB sticks - CcOS docs</title>
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; <a href="index.html">Docs</a> &gt; Files and USB sticks</small></p>
+<h1>Files and USB sticks</h1>
+<p>[ <a href="index.html">Contents</a> | <a href="start.html">Getting started</a> | <a href="desktop.html">The desktop</a> | <a href="shortcuts.html">Shortcuts</a> | <b>Files</b> | <a href="apps.html">Apps</a> | <a href="terminal.html">Terminal</a> | <a href="help.html">Help</a> ]</p>
+<hr>
+<h2>File Explorer</h2>
+<p>File Explorer shows CcOS's drives and folders. Your favourites are on the left:
+<b>Documents</b> (yellow), <b>Images</b> (blue), <b>Downloads</b> (green) and <b>Videos</b> (purple).</p>
+<ul>
+  <li>Double-click a folder to open it, or a file to open it in its app.</li>
+  <li><b>Selecting:</b> click; Ctrl+click adds or removes one; Shift+click picks a range; Ctrl+A selects all.
+      Or press on an empty spot and drag a box.</li>
+  <li><b>Copy, cut, paste:</b> Ctrl+C, Ctrl+X, Ctrl+V, the buttons at the top, or right-click.
+      Big copies show a window with progress and Cancel. If a file with the same name is already there,
+      the new one becomes "name (2)".</li>
+  <li><b>Dragging:</b> drag files onto a folder or a place on the left. On the same drive it moves them,
+      to another drive it copies them (hold Ctrl to always copy).</li>
+  <li><b>Rename:</b> F2. <b>Search:</b> the box at the top right, or Ctrl+F.</li>
+  <li><b>Right-click empty space</b> &gt; New: Folder, Text Document, Web Page, Shell Script, Markdown Notes,
+      CSV Spreadsheet or Zip File.</li>
+</ul>
+<p>You can only change things on D: (and USB sticks). C: is CcOS itself.</p>
+
+<h2>The Recycle Bin</h2>
+<p><b>Delete</b> moves files to the Recycle Bin. It's on the desktop and on the left in File Explorer, and it
+shows where each file came from and when. <b>Restore</b> puts a file back; <b>Empty Recycle Bin</b> deletes
+them for good. <b>Shift+Delete</b> skips the Recycle Bin.</p>
+<p>Files on USB sticks can't go to the Recycle Bin, so they're deleted straight away (CcOS asks first).</p>
+
+<h2>Zip files</h2>
+<p>Right-click &gt; <b>Compress to zip</b> packs your selection into one .zip file. Double-click a .zip
+(or right-click &gt; Extract all) to unpack it. .rar, .7z, .tar, .tar.gz, .tar.xz and .tar.bz2 unpack the same way
+(but not ones with a password).</p>
+
+<h2>USB sticks and drives</h2>
+<ol>
+  <li>Plug it in. A notification says it's ready.</li>
+  <li>It shows in File Explorer, under Computer &gt; Removable Drives and on the left.</li>
+  <li><b>Before pulling it out</b>, click the eject button next to its name (or right-click &gt; Eject) and
+      wait for <b>"Safe to remove"</b>.</li>
+</ol>
+<p>FAT32, exFAT, NTFS, ext4 and CDs work. In the Terminal, <tt>lsusb</tt>, <tt>cdusb</tt> and <tt>jusb</tt>
+do the same things (see <a href="terminal.html">The Terminal</a>).</p>
+
+<h2>Printing</h2>
+<p>In Photos click the printer button (or Ctrl+P), or in File Explorer right-click a picture &gt; Print.
+CcOS finds printers on your Wi-Fi by itself (most printers from the last 10 years, anything with AirPrint
+or "IPP Everywhere"), with no drivers needed. If yours isn't found, type its IP address under "Not listed?".</p>
+
+<h2>When apps want a file</h2>
+<p>When an app wants a file ("Upload", "Open..."), a file window appears with your Documents, Images,
+Downloads, Videos and USB drives on the left.</p>
+<hr>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td align="left">&lt;&lt; <a href="shortcuts.html">Keyboard shortcuts</a></td><td align="right"><a href="apps.html">Apps</a> &gt;&gt;</td>
+</tr></table>
+<center><p><small>CcOS docs &middot; written for CcOS 1.9.6</small></p></center>
+
+</body>
+</html>

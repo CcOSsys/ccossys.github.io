@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When things go wrong - CcOS docs</title>
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; <a href="index.html">Docs</a> &gt; When things go wrong</small></p>
+<h1>When things go wrong</h1>
+<p>[ <a href="index.html">Contents</a> | <a href="start.html">Getting started</a> | <a href="desktop.html">The desktop</a> | <a href="shortcuts.html">Shortcuts</a> | <a href="files.html">Files</a> | <a href="apps.html">Apps</a> | <a href="terminal.html">Terminal</a> | <b>Help</b> ]</p>
+<hr>
+<h2>The screen stays black when it starts</h2>
+<p>Restart, open the boot menu again, pick the stick, and choose <b>ccos (safe graphics)</b> in the menu
+that shows for 3 seconds.</p>
+
+<h2>"CcOS needs to find your USB boot stick"</h2>
+<p>Some computers find USB sticks a few seconds late. Unplug the stick and plug it back in. When it says
+<b>"USB boot stick found!"</b>, the desktop opens with your settings. <b>Skip</b> (or Esc) opens the desktop
+straight away.</p>
+
+<h2>A [ FAIL ] line while starting</h2>
+<p>A red <tt>[ <font color="#cc0000"><b>FAIL</b></font> ]</tt> means one step didn't work. CcOS keeps going if it can.
+If the <b>desktop</b> itself fails, you stay on that screen with a command line, so you can type commands:</p>
+<ul>
+  <li><tt>desktop</tt> - try to start the desktop again</li>
+  <li><tt>help</tt> - a list of commands</li>
+  <li><tt>reboot</tt> - restart</li>
+</ul>
+<p>If the desktop crashed, what went wrong is written in <tt>/tmp/ccos-crash.txt</tt> (type <tt>cat /tmp/ccos-crash.txt</tt>).</p>
+
+<h2>The purple "KERNEL PANIC!" screen</h2>
+<p>That's Linux itself crashing (very rare). It shows Tux and the reason. CcOS restarts by itself after
+a few seconds, or you can hold the power button.</p>
+
+<h2>The desktop froze or is acting weird</h2>
+<ul>
+  <li>Press <b>Ctrl + Alt + Backspace</b> to leave the desktop, then type <tt>desktop</tt> to start it again.</li>
+  <li>If CcOS freezes for a second or more, it writes down what it was waiting for in
+      <b>D:\ccos-freeze-log.txt</b>. Handy for bug reports.</li>
+</ul>
+
+<h2>An app won't start or misbehaves</h2>
+<ul>
+  <li>If you turned on <b>Settings &gt; About &gt; "Let apps draw with the graphics chip"</b>, turn it off and restart the app.</li>
+  <li>The first Flathub app downloads a few hundred MB first, so give it time.</li>
+</ul>
+
+<h2>No internet</h2>
+<p>Click the network icon next to the clock and pick your Wi-Fi. In the Terminal, <tt>net</tt> tells you
+what's wrong.</p>
+
+<h2>Windows shows the wrong time after using CcOS</h2>
+<p>Turn on <b>Settings &gt; Clock &gt; "Windows is on this computer too"</b>. Then both show the right time.</p>
+
+<h2>Windows says the stick needs formatting</h2>
+<p>Click <b>Cancel</b>. Never format the CcOS stick from Windows, or your CcOS files and apps are gone.</p>
+
+<h2>Starting over</h2>
+<p>Writing the stick again with Rufus starts completely fresh, but it erases all your CcOS files and apps too.
+Copy anything you want to keep to another USB stick first.</p>
+<hr>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td align="left">&lt;&lt; <a href="terminal.html">The Terminal</a></td><td align="right"></td>
+</tr></table>
+<center><p><small>CcOS docs &middot; written for CcOS 1.9.6</small></p></center>
+
+</body>
+</html>
