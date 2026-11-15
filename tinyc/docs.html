@@ -20,7 +20,7 @@
 
 <p><small><a href="../">CcOS home</a> &gt; <a href="index.html">tinyCcOS</a> &gt; Docs</small></p>
 <h1>tinyCcOS docs</h1>
-<p>[ <a href="index.html">About</a> | <b>Docs</b> | <a href="../download.html">Download</a> ]</p>
+<p>[ <a href="index.html">About</a> | <b>Docs</b> | <a href="install.html">Install</a> | <a href="../download.html">Download</a> ]</p>
 <hr>
 <h2>Contents</h2>
 <ol>
@@ -56,11 +56,15 @@
 <p><img src="../img/tinyc-wait.png" alt="the WAIT line" width="720" height="120"></p>
 <p>Some computers find USB sticks late. If tinyc can't find its stick, it waits on this line.
 Unplug the stick and plug it back in: the line turns into <tt>[ OK ]</tt> and tinyc carries on to the desktop.
-tinyc always needs its stick, so it waits until it finds it.</p>
+tinyc always needs its stick (unless you <a href="install.html">installed it</a> on the computer), so it waits until it finds it.</p>
+
+<h3>Installing tinyc on the computer</h3>
+<p>To start tinyc without the stick, install it on the computer's own disk with <b>/o\ &gt; Install tinyc</b>.
+Read <a href="install.html">Installing tinyc on your computer</a> first: it has a checklist and explains what could go wrong.</p>
 
 <h2><a name="desktop" id="desktop">2. The desktop</a></h2>
 <ul>
-  <li><b>/o\</b> (bottom left) opens the menu: Terminal, Files, Notepad, Apps, Wi-Fi, Settings, <b>Programs</b>
+  <li><b>/o\</b> (bottom left) opens the menu: Terminal, Files, Notepad, Apps, Wi-Fi, Settings, Install tinyc, <b>Programs</b>
       (everything you installed with Apps), Restart and Shut down.</li>
   <li>Next to it are quick buttons for Terminal, Files, Notepad and Apps.</li>
   <li>The middle of the taskbar shows your open windows. Click one to bring it up or hide it.</li>
@@ -137,7 +141,7 @@ search for <b>linux-firmware</b> and install the one for your chip (for example 
 </ul>
 
 <h2><a name="saving" id="saving">8. What gets saved</a></h2>
-<p>Everything you change is kept on the stick: your files, settings, saved Wi-Fi networks and installed apps.
+<p>Everything you change is kept on the stick (or, when tinyc is installed, on the computer's disk): your files, settings, saved Wi-Fi networks and installed apps.
 tinyc itself stays untouched underneath, on the stick's first part.</p>
 <ul>
   <li>Always shut down from the menu, so nothing is lost.</li>
@@ -223,7 +227,7 @@ For them there's a separate <b>32-bit tinyc</b> stick. It's the same tinyc, just
       out of the box: use a cable or a USB Wi-Fi stick.</li>
 </ul>
 <hr>
-<center><p><small>tinyCcOS &middot; written for tinyc 0.1 beta</small></p></center>
+<center><p><small>tinyCcOS &middot; written for tinyc 0.2 beta</small></p></center>
 
 </body>
 </html>

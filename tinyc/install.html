@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installing tinyc on your computer</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="description" content="tinyCcOS (tinyc): a tiny, plain version of CcOS for old computers.">
+<style>
+  /* just enough to keep it readable on phones; the rest is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  pre { overflow-x: auto; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="../">CcOS home</a> &gt; <a href="index.html">tinyCcOS</a> &gt; Install</small></p>
+<h1>Installing tinyc on your computer</h1>
+<p>[ <a href="index.html">About</a> | <a href="docs.html">Docs</a> | <b>Install</b> | <a href="../download.html">Download</a> ]</p>
+<hr>
+<p>tinyc can be put on your computer's own disk (a hard disk or SSD), so it starts without the USB stick.
+You can keep Windows and pick tinyc or Windows each time the computer starts, or give tinyc the whole disk.</p>
+
+<table border="1" cellpadding="6" cellspacing="0" width="100%" bgcolor="#ffdddd"><tr><td>
+<b>Please read this first.</b> Installing changes your computer's disk. It's tested, but tinyc is a
+beta, and if something goes wrong (a power cut in the middle, a disk that was already failing, a bug),
+<b>Windows or your files could be damaged</b>. So <b>back up everything important first</b>, and read
+<a href="#risks">what could go wrong</a>. If you only want to try tinyc, you don't need to install it:
+it runs from the USB stick just fine.
+</td></tr></table>
+
+<h2>Contents</h2>
+<ol>
+  <li><a href="#ways">The three ways to install</a></li>
+  <li><a href="#before">Before you start (checklist)</a></li>
+  <li><a href="#bitlocker">Turning off BitLocker (device encryption)</a></li>
+  <li><a href="#faststartup">Turning off Fast Startup</a></li>
+  <li><a href="#secureboot">Turning off Secure Boot</a></li>
+  <li><a href="#steps">Installing, step by step</a></li>
+  <li><a href="#after">After installing</a></li>
+  <li><a href="#risks">What could go wrong</a></li>
+  <li><a href="#remove">Removing tinyc again</a></li>
+</ol>
+
+<h2><a name="ways" id="ways">1. The three ways to install</a></h2>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Way</th><th align="left">What happens</th><th align="left">Windows</th></tr>
+<tr><td valign="top"><b>Next to Windows</b></td><td valign="top">Windows is made smaller (you choose how much space tinyc gets with a slider). tinyc goes in the freed space. When the computer starts, a menu lets you pick <b>tinyc</b> or <b>Windows</b>.</td><td valign="top">Stays, with all its files</td></tr>
+<tr><td valign="top"><b>In the empty space</b></td><td valign="top">If part of the disk isn't used by anything, tinyc goes there. Nothing else is changed.</td><td valign="top">Stays, untouched</td></tr>
+<tr><td valign="top"><b>Erase the whole disk</b></td><td valign="top">Everything on the disk is deleted and tinyc gets all of it.</td><td valign="top"><b>Deleted for good</b>, with all its files</td></tr>
+</table>
+<p>Windows always keeps at least 10 GB of free space for itself, and tinyc gets at least 4 GB. 16 GB or more is plenty for tinyc and lots of apps.</p>
+
+<h2><a name="before" id="before">2. Before you start (checklist)</a></h2>
+<p>Go through all of these <b>in Windows</b>, before starting tinyc from the USB stick. The <b>Install tinyc</b> app checks most of them
+too and tells you if one isn't done.</p>
+<ol>
+  <li><b>Back up your important files</b> (photos, documents, school work, game saves...) to another USB drive or to the cloud
+      (OneDrive, Google Drive...). This is the most important step.</li>
+  <li><b>Laptops: plug in the charger</b> and keep it plugged in until it's done.</li>
+  <li><b>Turn off BitLocker / device encryption</b>, and wait until it's fully off. <a href="#bitlocker">How?</a></li>
+  <li><b>Turn off Fast Startup</b>, then <b>shut down</b> Windows (not restart). <a href="#faststartup">How?</a></li>
+  <li><b>Make sure Windows has free space</b>: tinyc can only take space Windows isn't using. Empty the Recycle Bin and
+      delete what you don't need first.</li>
+  <li><b>Turn off Secure Boot</b> in the computer's setup (BIOS). <a href="#secureboot">How?</a>
+      (If tinyc already starts from the USB stick on this computer, it's already off.)</li>
+</ol>
+
+<h2><a name="bitlocker" id="bitlocker">3. Turning off BitLocker (device encryption)</a></h2>
+<p>Many new laptops with Windows 11 encrypt the disk by themselves. tinyc can't make an encrypted Windows smaller,
+so it has to be turned off first.</p>
+<p>It's best to <b>leave it off</b> afterwards too: with BitLocker on, Windows may ask for the recovery key every time
+you start it from tinyc's menu (BitLocker notices that Windows was started a different way).</p>
+<p><b>First, save your recovery key</b>, just in case: go to <a href="https://aka.ms/myrecoverykey">aka.ms/myrecoverykey</a>,
+sign in with your Microsoft account, and write the key down or take a photo of it. If Windows ever asks for it after
+changes to the computer, that's the key it wants.</p>
+<ul>
+  <li><b>Windows 11 Home</b>: Settings &gt; Privacy &amp; security &gt; <b>Device encryption</b> &gt; turn it <b>Off</b>.</li>
+  <li><b>Windows 10/11 Pro</b>: Control Panel &gt; System and Security &gt; <b>BitLocker Drive Encryption</b> &gt; <b>Turn off BitLocker</b>.</li>
+  <li>Turning it off ("decrypting") takes a while, from minutes to hours. <b>Wait until it says it's off.</b>
+      If you don't see either setting, it's not on.</li>
+</ul>
+
+<h2><a name="faststartup" id="faststartup">4. Turning off Fast Startup</a></h2>
+<p>With Fast Startup on, "Shut down" doesn't really shut Windows down: it half-sleeps, and its disk stays half-open.
+Changing a half-open disk is dangerous, so tinyc won't touch it.</p>
+<ol>
+  <li>Open <b>Control Panel</b> &gt; Hardware and Sound &gt; <b>Power Options</b>.</li>
+  <li>Click <b>Choose what the power buttons do</b> (on the left).</li>
+  <li>Click <b>Change settings that are currently unavailable</b>.</li>
+  <li>Untick <b>Turn on fast startup (recommended)</b> and click <b>Save changes</b>.</li>
+  <li>Now <b>Shut down</b> Windows (from the Start menu). Don't use Restart.</li>
+</ol>
+<p>Keep it off while you use tinyc next to Windows: tinyc can then open your Windows files safely too.</p>
+
+<h2><a name="secureboot" id="secureboot">5. Turning off Secure Boot</a></h2>
+<p>Secure Boot only lets the computer start systems signed by Microsoft. tinyc isn't, so Secure Boot has to be off,
+for the USB stick and for the installed tinyc.</p>
+<ol>
+  <li>Turn the computer on and press the setup key at the logo: often <b>F2</b>, <b>Del</b>, <b>F10</b> or <b>Esc</b>
+      (it's often written on the screen for a moment).</li>
+  <li>Find <b>Secure Boot</b>. It's usually under <b>Security</b>, <b>Boot</b> or <b>Authentication</b>.</li>
+  <li>Set it to <b>Disabled</b>. Some computers want you to set a "supervisor password" first; you can remove it again afterwards.</li>
+  <li>Save and exit (often <b>F10</b>).</li>
+</ol>
+<p>Windows keeps working with Secure Boot off. If BitLocker is still on, Windows may ask for the recovery key once.</p>
+
+<h2><a name="steps" id="steps">6. Installing, step by step</a></h2>
+<ol>
+  <li>Start tinyc from its USB stick (see <a href="docs.html#start">Starting tinyc</a>).</li>
+  <li>Open <b>/o\ &gt; Install tinyc</b>.</li>
+  <li><b>Before you start</b>: tinyc checks the computer. Fix anything with a red mark, tick <b>I've backed up my important files</b>, click <b>Next</b>.
+      <p><img src="../img/tinyc-install-1-check.png" alt="Install tinyc: Before you start" width="600" height="496"></p></li>
+  <li><b>Where should tinyc go?</b> Pick the disk (if there's more than one) and the way to install. Ways that can't be used say why.
+      <p><img src="../img/tinyc-install-2-where.png" alt="Install tinyc: Where should tinyc go?" width="600" height="496"></p></li>
+  <li><b>How much space for tinyc?</b> Move the slider. It shows how much Windows keeps, and how much of that stays free for Windows.
+      <p><img src="../img/tinyc-install-3-size.png" alt="Install tinyc: How much space" width="600" height="276"></p></li>
+  <li><b>Ready to install</b>: read the summary. <b>Bring my files, settings and apps from this USB stick</b> copies everything you
+      already did on the stick. For <b>Erase the whole disk</b>, you have to tick that you understand everything will be deleted.
+      <p><img src="../img/tinyc-install-4-erase.png" alt="Install tinyc: Ready (erase)" width="600" height="496"></p></li>
+  <li>Click <b>Install</b> and wait. Making Windows smaller can take from seconds to a long time, depending on how full the disk is.
+      <b>Don't turn the computer off.</b></li>
+  <li>When it says <b>tinyc is installed!</b>, take out the USB stick and click <b>Restart now</b>.
+      <p><img src="../img/tinyc-install-5-done.png" alt="Install tinyc: done" width="600" height="496"></p></li>
+</ol>
+
+<h2><a name="after" id="after">7. After installing</a></h2>
+<ul>
+  <li>When the computer starts, a menu shows for 5 seconds:
+<pre>
+    tinyc
+    Windows
+    tinyc (safe graphics)
+</pre>
+      Use the arrow keys and Enter to pick one. It <b>remembers your last choice</b>, so if you always use one, just wait.</li>
+  <li>The first time Windows starts after tinyc made it smaller, it may <b>check its disk</b>. That's normal: let it finish.</li>
+  <li>tinyc doesn't need the USB stick anymore. Keep it anyway: it's how you start tinyc if something goes wrong.</li>
+  <li>tinyc sets the clock the way Windows likes it (Settings &gt; Time &gt; "Windows is on this computer too" is ticked).</li>
+  <li>Your Windows disk shows up in Files under <tt>/media</tt>, so you can open your Windows files from tinyc.</li>
+</ul>
+
+<h2><a name="risks" id="risks">8. What could go wrong</a></h2>
+<dl>
+  <dt><b>Windows gets damaged while it's being made smaller</b></dt>
+  <dd>If the power goes out or the computer crashes in the middle, Windows may not start anymore, and files can be lost.
+      That's why you back up first and keep laptops plugged in. tinyc refuses to start if Windows isn't fully shut down,
+      is encrypted, or needs a disk check, which avoids the most common problems.</dd>
+  <dt><b>Erase means erase</b></dt>
+  <dd><b>Erase the whole disk</b> deletes Windows and every file on that disk, for good. There is no undo.</dd>
+  <dt><b>The computer starts Windows straight away, without the menu</b></dt>
+  <dd>Some computers (and sometimes big Windows updates) put Windows first again. Open the computer's boot menu
+      (often <b>F12</b>, F9, F11 or Esc at the logo) and pick <b>tinyc</b>, or move <b>tinyc</b> to the top of the boot order in the setup (BIOS).</dd>
+  <dt><b>Windows asks for a BitLocker recovery key</b></dt>
+  <dd>This can happen after changing Secure Boot or the disk, and every time if BitLocker was turned back on. Type the key you saved from
+      <a href="https://aka.ms/myrecoverykey">aka.ms/myrecoverykey</a>, then turn BitLocker off again (or start Windows from the computer's own boot menu).</dd>
+  <dt><b>tinyc doesn't start: "Couldn't find tinyc's partition on this computer's disk"</b></dt>
+  <dd>Something changed the disk (for example, tinyc's part was deleted). Start tinyc from the USB stick to get to your files, or install again.</dd>
+  <dt><b>It's a beta</b></dt>
+  <dd>The installer was tested on test computers (new UEFI with GPT disks, and old BIOS with MBR disks, 64-bit and 32-bit),
+      but not yet on many real ones. Computers with unusual disk setups (RAID, two Windows, Windows on a "logical" partition)
+      may not be offered the "Next to Windows" way.</dd>
+</dl>
+
+<h2><a name="remove" id="remove">9. Removing tinyc again</a></h2>
+<p>Do these steps in this order, so Windows keeps starting:</p>
+<ol>
+  <li><b>Newer computers (UEFI)</b>: in the computer's setup (BIOS), move <b>Windows Boot Manager</b> to the top of the boot order.
+      <br><b>Old BIOS computers</b>: start from a Windows installation USB, choose Repair your computer &gt; Troubleshoot &gt;
+      Command Prompt, and type <tt>bootrec /fixmbr</tt>.</li>
+  <li>In Windows, open <b>Disk Management</b> (right-click the Start button). Delete the partition tinyc was on
+      (it has no drive letter and is the size you gave tinyc). Be careful to pick the right one.</li>
+  <li>Right-click your C: partition and choose <b>Extend Volume</b> to give the space back to Windows.</li>
+</ol>
+<hr>
+<center><p><small>tinyCcOS &middot; written for tinyc 0.2 beta</small></p></center>
+
+</body>
+</html>

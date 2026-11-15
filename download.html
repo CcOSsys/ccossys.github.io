@@ -20,30 +20,32 @@
 
 <p><small><a href="./">CcOS home</a> &gt; Download</small></p>
 <h1>Download</h1>
-<p>[ <a href="./">Home</a> | <a href="tinyc/">tinyCcOS</a> | <a href="tinyc/docs.html">tinyCcOS docs</a> | <b>Download</b> ]</p>
+<p>[ <a href="./">Home</a> | <a href="tinyc/">tinyCcOS</a> | <a href="tinyc/docs.html">tinyCcOS docs</a> | <a href="tinyc/install.html">Install guide</a> | <b>Download</b> ]</p>
 <hr>
 
 <table border="1" cellpadding="6" cellspacing="0" width="100%" bgcolor="#ffffcc"><tr><td>
-<b>BETA!</b> tinyCcOS 0.1 is still in making. It works, but it hasn't been tried on many real
+<b>BETA!</b> tinyCcOS 0.2 is still in making. It works, but it hasn't been tried on many real
 computers yet, so some things may not work on yours. Your files are kept on the USB stick,
 but keep a copy of anything important somewhere else too.
 </td></tr></table>
 
-<h2>tinyCcOS 0.1 beta</h2>
+<h2>tinyCcOS 0.2 beta</h2>
 <p>The tiny, plain version of CcOS for old computers (and potatoes). <a href="tinyc/">What is it?</a></p>
+<p><b>New in 0.2:</b> <b>Install tinyc</b> puts tinyc on your computer's own disk, next to Windows or on its own,
+so it starts without the USB stick. <a href="tinyc/install.html">Read how to install it (and the risks) first.</a></p>
 
 <table border="1" cellpadding="6" cellspacing="0" width="100%">
 <tr bgcolor="#dddddd"><th align="left">Download</th><th align="left">For</th><th align="left">Size</th></tr>
 <tr>
-  <td valign="top"><b><a href="https://github.com/CcOSsys/tinyc/releases/download/0.1v-beta/tinyCcOS-0.1-beta-64bit.img.gz">tinyCcOS 0.1 beta (64-bit)</a></b></td>
+  <td valign="top"><b><a href="https://github.com/CcOSsys/tinyc/releases/download/0.2-beta/tinyCcOS-0.2-beta-64bit.img.gz">tinyCcOS 0.2 beta (64-bit)</a></b></td>
   <td valign="top">Most computers from about 2008 on. <b>Pick this one if you're not sure.</b></td>
-  <td valign="top" nowrap>76 MB</td>
+  <td valign="top" nowrap>78 MB</td>
 </tr>
 <tr>
-  <td valign="top"><b><a href="https://github.com/CcOSsys/tinyc/releases/download/0.1v-beta/tinyCcOS-0.1-beta-32bit.img.gz">tinyCcOS 0.1 beta (32-bit)</a></b></td>
+  <td valign="top"><b><a href="https://github.com/CcOSsys/tinyc/releases/download/0.2-beta/tinyCcOS-0.2-beta-32bit.img.gz">tinyCcOS 0.2 beta (32-bit)</a></b></td>
   <td valign="top">Really old computers that can't run 64-bit: Pentium 4, Pentium M, the first Atom netbooks.
       <a href="tinyc/docs.html#32bit">More about it</a></td>
-  <td valign="top" nowrap>76 MB</td>
+  <td valign="top" nowrap>78 MB</td>
 </tr>
 </table>
 <p><small>All files and older versions: <a href="https://github.com/CcOSsys/tinyc/releases">tinyc releases on GitHub</a>.
@@ -66,15 +68,15 @@ Source code: <a href="https://github.com/CcOSsys/tinyc">github.com/CcOSsys/tinyc
       (often <b>F12</b>, sometimes F9, F10, F11 or Esc). Pick the USB stick.</li>
 </ol>
 <p>On Linux you can also write it in the Terminal (change <tt>sdX</tt> to your stick, and be careful to pick the right one):<br>
-<tt>zcat tinyCcOS-0.1-beta-64bit.img.gz | sudo dd of=/dev/sdX bs=4M status=progress</tt></p>
-<p>The first start takes a bit longer, and tinyc always needs its USB stick to start. Everything else is in the
+<tt>zcat tinyCcOS-0.2-beta-64bit.img.gz | sudo dd of=/dev/sdX bs=4M status=progress</tt></p>
+<p>The first start takes a bit longer, and tinyc always needs its USB stick to start (unless you <a href="tinyc/install.html">install it</a> on the computer). Everything else is in the
 <a href="tinyc/docs.html">tinyCcOS docs</a>.</p>
 
 <h2>Check the download (if you want)</h2>
 <p>These SHA-256 checksums show that the file arrived complete and unchanged:</p>
 <table border="1" cellpadding="4" cellspacing="0" width="100%">
-<tr><td>tinyCcOS-0.1-beta-64bit.img.gz</td><td><tt>37261a96a641c9e3be7e7f8c07690364620c0481e8565ec8acfe70ca6dab379c</tt></td></tr>
-<tr><td>tinyCcOS-0.1-beta-32bit.img.gz</td><td><tt>f8d6160ca062c747ca12c8c4f44ac87ec16e86025e78df8de2fe2c0b7de5b60d</tt></td></tr>
+<tr><td>tinyCcOS-0.2-beta-64bit.img.gz</td><td><tt>3d43c0354c108034bcaa2dbbcb1ad501482615ce73b897a14f198330e263768e</tt></td></tr>
+<tr><td>tinyCcOS-0.2-beta-32bit.img.gz</td><td><tt>0e8959f38be6cfa9bec684b1529301320847f0c366a4bcf649bd33d2cd06a7c4</tt></td></tr>
 </table>
 <p><small>On Windows: <tt>certutil -hashfile FILE SHA256</tt>. On Linux and Mac: <tt>sha256sum FILE</tt>.</small></p>
 
