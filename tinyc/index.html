@@ -20,11 +20,11 @@
 
 <p><small><a href="../">CcOS home</a> &gt; tinyCcOS</small></p>
 <h1>tinyCcOS</h1>
-<p>[ <b>About</b> | <a href="docs.html">Docs</a> ]</p>
+<p>[ <b>About</b> | <a href="docs.html">Docs</a> | <a href="../download.html">Download</a> ]</p>
 <hr>
 <table border="1" cellpadding="6" cellspacing="0" width="100%" bgcolor="#ffffcc"><tr><td>
-<b>tinyCcOS is in making!</b> It will even be able to run on a potato.
-Version 0.1 works, but it hasn't been tested on many real computers yet.
+<b>tinyCcOS 0.1 beta is out!</b> It will even run on a potato. <a href="../download.html"><b>Download it here.</b></a>
+It works, but it hasn't been tested on many real computers yet.
 </td></tr></table>
 
 <p>
@@ -39,7 +39,10 @@ should do, it just isn't fancy about it.
 <ul>
   <li>A plain desktop (IceWM) with a taskbar, the <b>/o\</b> start menu and the CcOS look</li>
   <li><b>Apps</b> - find and install thousands of apps, plain and simple</li>
-  <li><b>Wi-Fi</b>, <b>Files</b> (a file manager), <b>Notepad</b> and a <b>Terminal</b></li>
+  <li><b>Wi-Fi</b>, <b>Files</b> (a file manager), <b>Notepad</b>, <b>Settings</b> and a <b>Terminal</b></li>
+  <li>The easy Terminal commands from CcOS, like <tt>mkf hi.txt : hello!</tt>, that also show you the real Linux way</li>
+  <li>Wi-Fi and volume icons next to the clock; volume and brightness keys work</li>
+  <li>The right time by itself (from the internet), your time zone and keyboard layout</li>
   <li>Sound, USB sticks and drives (FAT32, exFAT, NTFS, ext4), webcams</li>
   <li>Old-school boot messages: <tt>[ OK ]</tt> in green, then "Welcome to tinyc!"</li>
   <li>Your files, settings and apps are kept on the USB stick</li>
@@ -48,7 +51,7 @@ should do, it just isn't fancy about it.
 <h2>What it needs</h2>
 <table border="1" cellpadding="4" cellspacing="0" width="100%">
 <tr bgcolor="#dddddd"><th align="left"></th><th align="left">tinyc</th></tr>
-<tr><td valign="top">Computer</td><td valign="top">64-bit (most computers from about 2008 on), old BIOS or newer UEFI</td></tr>
+<tr><td valign="top">Computer</td><td valign="top">64-bit (most computers from about 2008 on), old BIOS or newer UEFI.<br>Older 32-bit computers (Pentium 4, Pentium M, Atom...): use the separate <b>32-bit version</b>.</td></tr>
 <tr><td valign="top">Memory</td><td valign="top">256 MB is enough. With the desktop and a Terminal open, about 165 MB is still free.</td></tr>
 <tr><td valign="top">USB stick</td><td valign="top">at least 2 GB (tinyc itself uses about 130 MB; the rest is for your files and apps)</td></tr>
 <tr><td valign="top">Wi-Fi</td><td valign="top">Intel, Realtek and Atheros USB chips work out of the box. Others (Broadcom, MediaTek) can be added with Apps over a cable.</td></tr>
@@ -74,15 +77,19 @@ hold your hand as much as CcOS does.
 <h2>Screenshots</h2>
 <table border="1" cellpadding="4" cellspacing="0" width="100%">
 <tr><td align="center"><img src="../img/tinyc-apps.png" alt="The Apps window" width="760" height="540"><br>Apps</td></tr>
+<tr><td align="center"><img src="../img/tinyc-settings.png" alt="The Settings window" width="562" height="507"><br>Settings</td></tr>
+<tr><td align="center"><img src="../img/tinyc-terminal.png" alt="The Terminal with easy commands" width="824" height="508"><br>The Terminal, with easy commands</td></tr>
 <tr><td align="center"><img src="../img/tinyc-boot.png" alt="tinyc starting up" width="720" height="260"><br>Starting up</td></tr>
 <tr><td align="center"><img src="../img/tinyc-wifi.png" alt="The Wi-Fi window" width="462" height="410"><br>Wi-Fi</td></tr>
 </table>
 
 <h2>Under the hood</h2>
 <p>tinyc is built on <a href="https://alpinelinux.org">Alpine Linux</a> (its packages are what Apps installs)
-and the Linux kernel, with the IceWM desktop. tinyc's own little programs (Apps, Wi-Fi, Notepad) are made with FLTK.</p>
+and the Linux kernel, with the IceWM desktop. tinyc's own little programs (Apps, Wi-Fi, Notepad, Settings) are made with FLTK.</p>
+<p>tinyc's source code and the licences of everything it's built from are on
+<a href="https://github.com/CcOSsys">GitHub</a>.</p>
 <hr>
-<center><p><small>tinyCcOS &middot; written for tinyc 0.1</small></p></center>
+<center><p><small>tinyCcOS &middot; written for tinyc 0.1 beta</small></p></center>
 
 </body>
 </html>

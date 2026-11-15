@@ -20,7 +20,7 @@
 
 <p><small><a href="../">CcOS home</a> &gt; <a href="index.html">tinyCcOS</a> &gt; Docs</small></p>
 <h1>tinyCcOS docs</h1>
-<p>[ <a href="index.html">About</a> | <b>Docs</b> ]</p>
+<p>[ <a href="index.html">About</a> | <b>Docs</b> | <a href="../download.html">Download</a> ]</p>
 <hr>
 <h2>Contents</h2>
 <ol>
@@ -30,13 +30,17 @@
   <li><a href="#apps">Apps</a></li>
   <li><a href="#wifi">Wi-Fi</a></li>
   <li><a href="#files">Files and Notepad</a></li>
+  <li><a href="#settings">Settings</a></li>
   <li><a href="#saving">What gets saved</a></li>
   <li><a href="#terminal">The Terminal</a></li>
+  <li><a href="#easy">Easy commands</a></li>
   <li><a href="#help">When things go wrong</a></li>
+  <li><a href="#32bit">The 32-bit version</a></li>
 </ol>
 
 <h2><a name="start" id="start">1. Starting tinyc</a></h2>
 <ol>
+  <li><a href="../download.html">Download tinyc</a> (64-bit, or 32-bit for really old computers).</li>
   <li>Write the tinyc USB image to a USB stick of <b>2 GB or more</b> with <a href="https://rufus.ie">Rufus</a>
       (on Windows) or <tt>dd</tt>. <b>Everything on the stick is erased.</b></li>
   <li>Restart the computer and open its boot menu (often <b>F12</b>, sometimes F9, F10, F11 or Esc at the logo) and pick the stick.</li>
@@ -56,11 +60,13 @@ tinyc always needs its stick, so it waits until it finds it.</p>
 
 <h2><a name="desktop" id="desktop">2. The desktop</a></h2>
 <ul>
-  <li><b>/o\</b> (bottom left) opens the menu: Terminal, Files, Notepad, Apps, Wi-Fi, <b>Programs</b>
+  <li><b>/o\</b> (bottom left) opens the menu: Terminal, Files, Notepad, Apps, Wi-Fi, Settings, <b>Programs</b>
       (everything you installed with Apps), Restart and Shut down.</li>
   <li>Next to it are quick buttons for Terminal, Files, Notepad and Apps.</li>
   <li>The middle of the taskbar shows your open windows. Click one to bring it up or hide it.</li>
-  <li>Bottom right: the battery (on laptops) and the clock.</li>
+  <li>Bottom right: the network icon (Wi-Fi bars, a plug for a cable, or a red x when not connected;
+      click it for the Wi-Fi window), the speaker (click for a volume slider, scroll on it for louder or quieter,
+      right-click to mute), the battery (on laptops) and the clock.</li>
   <li>Windows have the usual buttons: minimize, maximize and close. Double-click a title bar to maximize.</li>
   <li>Always use <b>Shut down</b> or <b>Restart</b> in the menu, so everything is written to the stick first.</li>
 </ul>
@@ -73,7 +79,9 @@ tinyc always needs its stick, so it waits until it finds it.</p>
 <tr><td valign="top"><tt>Alt + F4</tt></td><td valign="top">Close the window</td></tr>
 <tr><td valign="top"><tt>Win + E</tt></td><td valign="top">Files</td></tr>
 <tr><td valign="top"><tt>Win + T</tt></td><td valign="top">Terminal</td></tr>
+<tr><td valign="top"><tt>Win + I</tt></td><td valign="top">Settings</td></tr>
 <tr><td valign="top">Volume keys</td><td valign="top">Volume up / down / mute</td></tr>
+<tr><td valign="top">Brightness keys</td><td valign="top">Screen brighter / darker (laptops)</td></tr>
 <tr><td valign="top"><tt>Ctrl + N / O / S</tt></td><td valign="top">Notepad: new / open / save</td></tr>
 <tr><td valign="top"><tt>Ctrl + F</tt>, <tt>F3</tt></td><td valign="top">Notepad: find, find next</td></tr>
 </table>
@@ -115,7 +123,20 @@ search for <b>linux-firmware</b> and install the one for your chip (for example 
       View &gt; Word wrap, Bigger text and Smaller text change how it looks.</li>
 </ul>
 
-<h2><a name="saving" id="saving">7. What gets saved</a></h2>
+<h2><a name="settings" id="settings">7. Settings</a></h2>
+<p><img src="../img/tinyc-settings.png" alt="The Settings window" width="562" height="507"></p>
+<p>Open <b>/o\ &gt; Settings</b> (or <b>Win + I</b>). Everything you change is kept on the stick.</p>
+<ul>
+  <li><b>Time</b>: pick your time zone (type a city to find it). <b>Set the time from the internet</b> keeps the clock right
+      by itself whenever you're online. Tick <b>Windows is on this computer too</b> if the computer also has Windows,
+      so the clock is right in both.</li>
+  <li><b>Keyboard</b>: your keyboard layout (Polish, US, German, French and many more). There's a box to try it out.</li>
+  <li><b>Desktop</b>: the background picture. Pick one of tinyc's, or <b>Use my own picture...</b></li>
+  <li><b>Screen</b>: brightness (on laptops) and the screen size.</li>
+  <li><b>About</b>: the tinyc version, the processor, memory and free space on the stick.</li>
+</ul>
+
+<h2><a name="saving" id="saving">8. What gets saved</a></h2>
 <p>Everything you change is kept on the stick: your files, settings, saved Wi-Fi networks and installed apps.
 tinyc itself stays untouched underneath, on the stick's first part.</p>
 <ul>
@@ -125,8 +146,9 @@ tinyc itself stays untouched underneath, on the stick's first part.</p>
   <li>Windows may offer to format the stick when you plug it in. Say <b>no</b>.</li>
 </ul>
 
-<h2><a name="terminal" id="terminal">8. The Terminal</a></h2>
-<p>tinyc's Terminal is plain Linux: there are no special easy commands like in CcOS. These are the ones you'll use most:</p>
+<h2><a name="terminal" id="terminal">9. The Terminal</a></h2>
+<p>tinyc's Terminal is real Linux (bash). It also has CcOS's <a href="#easy">easy commands</a>.
+<tt>help</tt> lists the useful commands. These are the usual Linux ones you'll use most:</p>
 <table border="1" cellpadding="4" cellspacing="0" width="100%">
 <tr bgcolor="#dddddd"><th align="left">Command</th><th align="left">What it does</th></tr>
 <tr><td valign="top"><tt>ls</tt></td><td valign="top">List the files here (<tt>ls -l</tt> with sizes)</td></tr>
@@ -147,7 +169,30 @@ tinyc itself stays untouched underneath, on the stick's first part.</p>
 </table>
 <p>Any command followed by <tt>--help</tt> shows how to use it, for example <tt>cp --help</tt>.</p>
 
-<h2><a name="help" id="help">9. When things go wrong</a></h2>
+<h2><a name="easy" id="easy">10. Easy commands</a></h2>
+<p><img src="../img/tinyc-terminal.png" alt="The Terminal with easy commands" width="824" height="508"></p>
+<p>The same easy commands as CcOS. Each one also shows the usual Linux way of doing the same thing in grey,
+so you learn the real commands as you go. <tt>hints off</tt> hides those grey lines, <tt>hints on</tt> brings them back.
+Names with spaces are fine: <tt>rd my list.txt</tt>.</p>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Command</th><th align="left">What it does</th></tr>
+<tr><td valign="top"><tt>mkf hi.txt</tt></td><td valign="top">Make an empty file</td></tr>
+<tr><td valign="top"><tt>mkf hi.txt : hello!</tt></td><td valign="top">Make a file with text in it. <tt>\n</tt> starts a new line: <tt>mkf list.txt : milk \n eggs</tt></td></tr>
+<tr><td valign="top"><tt>rd hi.txt</tt></td><td valign="top">Read a file</td></tr>
+<tr><td valign="top"><tt>adf hi.txt : more text</tt></td><td valign="top">Add text to the end of a file</td></tr>
+<tr><td valign="top"><tt>rn old.txt : new.txt</tt></td><td valign="top">Rename</td></tr>
+<tr><td valign="top"><tt>cpf photo.png : usb1</tt></td><td valign="top">Copy (to a USB stick, a folder, or a new name)</td></tr>
+<tr><td valign="top"><tt>rmt hi.txt</tt></td><td valign="top">Put it in the Trash (on a USB stick it asks first, then deletes for good)</td></tr>
+<tr><td valign="top"><tt>op hi.txt</tt></td><td valign="top">Open it in its program (text in Notepad, folders in Files)</td></tr>
+<tr><td valign="top"><tt>lsusb</tt></td><td valign="top">Your USB sticks, as usb1, usb2...</td></tr>
+<tr><td valign="top"><tt>cdusb usb1</tt>, <tt>xusb</tt></td><td valign="top">Go into a USB stick, leave it</td></tr>
+<tr><td valign="top"><tt>jusb usb1</tt></td><td valign="top">Eject a USB stick safely</td></tr>
+<tr><td valign="top"><tt>space</tt></td><td valign="top">Free space on the stick, USB sticks and memory</td></tr>
+<tr><td valign="top"><tt>net</tt></td><td valign="top">Is the internet working?</td></tr>
+<tr><td valign="top"><tt>whereami</tt></td><td valign="top">Where you are, in words</td></tr>
+</table>
+
+<h2><a name="help" id="help">11. When things go wrong</a></h2>
 <dl>
   <dt><b>The screen stays black when it starts</b></dt>
   <dd>Restart and pick <b>tinyc (safe graphics)</b> in the menu that shows for 3 seconds.</dd>
@@ -161,9 +206,24 @@ tinyc itself stays untouched underneath, on the stick's first part.</p>
   <dd>Check the internet first (Wi-Fi window, or <tt>ping -c 3 alpinelinux.org</tt> in the Terminal), then click the round arrow in Apps and try again.</dd>
   <dt><b>No Wi-Fi card found</b></dt>
   <dd>See <a href="#wifi">Wi-Fi</a>: your chip needs an extra part from Apps.</dd>
+  <dt><b>The clock is wrong</b></dt>
+  <dd>Check the time zone in <a href="#settings">Settings</a>. If the computer also has Windows, tick
+      <b>Windows is on this computer too</b>.</dd>
 </dl>
+
+<h2><a name="32bit" id="32bit">12. The 32-bit version</a></h2>
+<p>Really old computers (Pentium 4, Pentium M, the first Atom netbooks) can't run 64-bit programs.
+For them there's a separate <b>32-bit tinyc</b> stick. It's the same tinyc, just built for 32-bit.</p>
+<ul>
+  <li>It needs a processor with SSE2 (almost everything from about 2003 on) and 256 MB of memory.</li>
+  <li>It starts on old BIOS computers and on 32-bit UEFI (some netbooks and cheap tablets).
+      On a 64-bit computer, use the normal tinyc.</li>
+  <li>Apps installs 32-bit apps. Most apps exist for 32-bit too, but a few big ones don't.</li>
+  <li>Old Intel Wi-Fi (Intel PRO/Wireless 2200 and 2915, in Pentium M "Centrino" laptops) doesn't work
+      out of the box: use a cable or a USB Wi-Fi stick.</li>
+</ul>
 <hr>
-<center><p><small>tinyCcOS &middot; written for tinyc 0.1</small></p></center>
+<center><p><small>tinyCcOS &middot; written for tinyc 0.1 beta</small></p></center>
 
 </body>
 </html>

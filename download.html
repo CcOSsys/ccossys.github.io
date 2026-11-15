@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Download tinyCcOS, the tiny version of CcOS for old computers.">
+<style>
+  /* just enough to keep it readable on phones; everything else is the browser's own default look */
+  body { max-width: 800px; margin: 8px auto; padding: 0 8px; }
+  img { max-width: 100%; height: auto; }
+  table { max-width: 100%; }
+  tt { word-break: break-all; }
+</style>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+
+<p><small><a href="./">CcOS home</a> &gt; Download</small></p>
+<h1>Download</h1>
+<p>[ <a href="./">Home</a> | <a href="tinyc/">tinyCcOS</a> | <a href="tinyc/docs.html">tinyCcOS docs</a> | <b>Download</b> ]</p>
+<hr>
+
+<table border="1" cellpadding="6" cellspacing="0" width="100%" bgcolor="#ffffcc"><tr><td>
+<b>BETA!</b> tinyCcOS 0.1 is still in making. It works, but it hasn't been tried on many real
+computers yet, so some things may not work on yours. Your files are kept on the USB stick,
+but keep a copy of anything important somewhere else too.
+</td></tr></table>
+
+<h2>tinyCcOS 0.1 beta</h2>
+<p>The tiny, plain version of CcOS for old computers (and potatoes). <a href="tinyc/">What is it?</a></p>
+
+<table border="1" cellpadding="6" cellspacing="0" width="100%">
+<tr bgcolor="#dddddd"><th align="left">Download</th><th align="left">For</th><th align="left">Size</th></tr>
+<tr>
+  <td valign="top"><b><a href="https://github.com/CcOSsys/tinyc/releases/download/0.1v-beta/tinyCcOS-0.1-beta-64bit.img.gz">tinyCcOS 0.1 beta (64-bit)</a></b></td>
+  <td valign="top">Most computers from about 2008 on. <b>Pick this one if you're not sure.</b></td>
+  <td valign="top" nowrap>76 MB</td>
+</tr>
+<tr>
+  <td valign="top"><b><a href="https://github.com/CcOSsys/tinyc/releases/download/0.1v-beta/tinyCcOS-0.1-beta-32bit.img.gz">tinyCcOS 0.1 beta (32-bit)</a></b></td>
+  <td valign="top">Really old computers that can't run 64-bit: Pentium 4, Pentium M, the first Atom netbooks.
+      <a href="tinyc/docs.html#32bit">More about it</a></td>
+  <td valign="top" nowrap>76 MB</td>
+</tr>
+</table>
+<p><small>All files and older versions: <a href="https://github.com/CcOSsys/tinyc/releases">tinyc releases on GitHub</a>.
+Source code: <a href="https://github.com/CcOSsys/tinyc">github.com/CcOSsys/tinyc</a> (MIT licence).</small></p>
+
+<h2>What you need</h2>
+<ul>
+  <li>A USB stick of <b>2 GB or more</b>. <b>Everything on it will be erased.</b></li>
+  <li>A computer with at least 256 MB of memory.</li>
+  <li>To write the stick: <a href="https://rufus.ie">Rufus</a> (Windows) or <a href="https://etcher.balena.io">balenaEtcher</a> (Windows, Mac, Linux).</li>
+</ul>
+
+<h2>How to put it on a USB stick</h2>
+<ol>
+  <li>Download one of the files above. You don't have to unzip it: Rufus and balenaEtcher can read the <tt>.img.gz</tt> file as it is.</li>
+  <li>Plug in the USB stick and open Rufus (or balenaEtcher).</li>
+  <li>Pick the USB stick, then click <b>SELECT</b> and pick the file you downloaded.</li>
+  <li>Click <b>START</b> (or <b>Flash!</b>). If Rufus asks how to write it, pick <b>DD image mode</b>. Wait until it's done.</li>
+  <li>Plug the stick into the computer you want to use, start it and open the boot menu
+      (often <b>F12</b>, sometimes F9, F10, F11 or Esc). Pick the USB stick.</li>
+</ol>
+<p>On Linux you can also write it in the Terminal (change <tt>sdX</tt> to your stick, and be careful to pick the right one):<br>
+<tt>zcat tinyCcOS-0.1-beta-64bit.img.gz | sudo dd of=/dev/sdX bs=4M status=progress</tt></p>
+<p>The first start takes a bit longer, and tinyc always needs its USB stick to start. Everything else is in the
+<a href="tinyc/docs.html">tinyCcOS docs</a>.</p>
+
+<h2>Check the download (if you want)</h2>
+<p>These SHA-256 checksums show that the file arrived complete and unchanged:</p>
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+<tr><td>tinyCcOS-0.1-beta-64bit.img.gz</td><td><tt>37261a96a641c9e3be7e7f8c07690364620c0481e8565ec8acfe70ca6dab379c</tt></td></tr>
+<tr><td>tinyCcOS-0.1-beta-32bit.img.gz</td><td><tt>f8d6160ca062c747ca12c8c4f44ac87ec16e86025e78df8de2fe2c0b7de5b60d</tt></td></tr>
+</table>
+<p><small>On Windows: <tt>certutil -hashfile FILE SHA256</tt>. On Linux and Mac: <tt>sha256sum FILE</tt>.</small></p>
+
+<h2>What about CcOS?</h2>
+<p>CcOS itself isn't available to download yet. For now there's only tinyCcOS.</p>
+
+<hr>
+<center><p><small>CcOS &middot; made for fun &middot; best viewed in any browser</small></p></center>
+
+</body>
+</html>
